@@ -1,0 +1,104 @@
+@keyframes loadbaralt {
+	0%,
+	to {
+		left: 0;
+		right: 80%;
+	}
+	25%,
+	75% {
+		left: 0;
+		right: 0;
+	}
+	50% {
+		left: 80%;
+		right: 0;
+	}
+}
+
+.gg-loadbar-alt,
+.gg-loadbar-alt::before,
+.gg-loadbar-alt::after {
+	display: block;
+	box-sizing: border-box;
+	height: 4px;
+	border-radius: 4px;
+}
+
+.gg-loadbar-alt {
+	position: relative;
+	transform: scale(var(--ggs, 1));
+	width: 18px;
+}
+
+.gg-loadbar-alt::after,
+.gg-loadbar-alt::before {
+	background: currentColor;
+	content: "";
+	position: absolute;
+}
+
+.gg-loadbar-alt::before {
+	animation: loadbaralt 2s cubic-bezier(0, 0, 0.58, 1) infinite;
+}
+
+.gg-loadbar-alt::after {
+	width: 18px;
+	opacity: 0.3;
+}
+
+.recipe-bot-form {
+	display: flex;
+	width: 100%;
+	gap: 5px;
+	align-items: stretch;
+}
+
+.recipe-bot-form input {
+	padding: 0;
+	margin: 0;
+	width: 100%;
+	outline: none;
+	border: 1px solid #bbb;
+	border-radius: 5px;
+	padding: 10px;
+	font-size: 14px;
+}
+
+.recipe-bot-form button {
+	position: relative;
+	overflow: hidden;
+	background-color: #000;
+	border: none;
+	padding: 10px 20px;
+	color: #fff;
+	font-size: 14px;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+.recipe-bot-form button:hover {
+	background-color: #333;
+}
+
+.recipe-bot-form button span {
+	position: absolute;
+	background: #000;
+	height: 100%;
+	width: 100%;
+	left: 0;
+	top: 0;
+	visibility: hidden;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.recipe-bot-render {
+	border: 1px solid #bbb;
+	padding: 10px;
+	font-size: 14px;
+	margin-top: 20px;
+	border-radius: 5px;
+	color: #000;
+	display: none;
+}
